@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <section>
+        <div class="head p-2 fixed-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="logo">
+                            <h2>Photo Editor</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex justify-content-around">
+                            <div class="upload">
+                                <label for="open">Open</label>
+                                <input class="d-none" type="file" id="open">
+                            </div>
+
+                            <a id="save" download="image" class="save" style="display: none;">Save</a>
+
+                            <a class="reset mx-5" style="display: none;">Reset</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row align-items-center vh-100">
+
+                <div class="img-container py-2">
+                    <p class="text-center">Press <span class="text-danger">Open</span> to choose an image</p>
+                    <div class="img w-50 m-auto px-5 text-center">
+                        <img id="img">
+                        <canvas id="canvas" class="w-100 m-auto"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="effect container-fluid fixed-bottom" style="display: none;">
+            <div class="effectRange w-50 m-auto mb-3">
+
+                <div style="display: none;">
+                    <label for="saturate">Saturate</label>
+                    <input type="range" value="100" min="0" max="200" id="saturate"
+                        style=" background-size: 50% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="contrast">Contrast</label>
+                    <input type="range" value="100" min="0" max="200" id="contrast"
+                        style=" background-size: 50% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="brightness">Brightness</label>
+                    <input type="range" value="100" min="0" max="200" id="brightness"
+                        style=" background-size: 50% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="sepia">Sepia</label>
+                    <input type="range" min="0" max="200" value="0" id="sepia" style=" background-size: 0% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="grayscale">Gray Scale</label>
+                    <input type="range" step="0.1" min="0" max="1" value="0" id="grayscale"
+                        style=" background-size: 0% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="blur">Blur</label>
+                    <input type="range" step="0.1" min="0" max="10" value="0" id="blur"
+                        style=" background-size: 0% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="hue-rotate">Hue Rotate</label>
+                    <input type="range" min="0" max="350" value="0" id="hue_rotate"
+                        style=" background-size: 0% 100%;" />
+
+                </div>
+                <div style="display: none;">
+                    <label for="invert">Invert</label>
+                    <input type="range" min="0" max="100" value="0" id="invert" style=" background-size: 0% 100%;" />
+
+                </div>
+
+            </div>
+            <ul class="d-flex justify-content-center border-top">
+                <li name="saturate">Saturate</li>
+                <li name="contrast">Contrast</li>
+                <li name="brightness">Brightness</li>
+                <li name="sepia">Sepia</li>
+                <li name="grayscale" class="">Gray Scale</li>
+                <li name="blur">Blur</li>
+                <li name="hue_rotate">Hue Rotate</li>
+                <li name="invert">Invert</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+
+
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
