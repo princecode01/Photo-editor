@@ -1,6 +1,4 @@
 
-
-
 const rangeInputs = document.querySelectorAll('input[type="range"]');
 
 

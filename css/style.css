@@ -88,11 +88,8 @@ ul li {
 .reset:hover,
 .save:hover,
 .upload label:hover {
-    color: rgb(0, 0, 0) !important;
-    background-color: #ff4500 !important;
-    box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.75);
+    color: #ff4500 !important;
+    
 }
 
 .effect{
@@ -113,7 +110,6 @@ ul li {
 .effect ul li {
     padding: 3px 7px;
     border-radius: 4px;
-    /* border: 1px solid #ff4500; */
     cursor: pointer;
     text-align: center;
     margin: 20px;
@@ -121,9 +117,8 @@ ul li {
 }
 
 .effect ul li:hover{
-    border: none;
-    background-color: #ff4500;
-    color: #333;
+
+    color: #ff4500;
 }
 
 
