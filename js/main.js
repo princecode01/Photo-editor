@@ -21,6 +21,7 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 
+// handle range color 
 function handleRangeChange(e) {
     let target = e.target
 
@@ -31,13 +32,11 @@ function handleRangeChange(e) {
     target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
 }
 
-
 rangeInputs.forEach(input => {
     input.addEventListener('input', handleRangeChange)
 })
 
-
-
+// buttons
 
 upload.onchange = () => {
 
@@ -46,12 +45,12 @@ upload.onchange = () => {
     resetButton.style.display = 'block';
     save.style.display = 'block';
 
+    resetValue();
+
     let file = new FileReader();
     file.readAsDataURL(upload.files[0]);
     file.onload = () => {
         img.src = file.result;
-
-        resetValue();
     }
 
     img.onload = () => {
@@ -67,14 +66,6 @@ upload.onchange = () => {
 resetButton.addEventListener('click', () => {
 
     resetValue();
-    rangeInputs.forEach(input => {
-
-        const min = input.min
-        const max = input.max
-        const val = input.value
-
-        input.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
-    })
 })
 
 
@@ -90,6 +81,15 @@ let resetValue = () => {
     hueRotate.value = "0";
     invert.value = "0";
 
+    rangeInputs.forEach(input => {
+
+        const min = input.min
+        const max = input.max
+        const val = input.value
+
+        input.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+    })
+
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 }
 
@@ -97,6 +97,7 @@ save.onclick = () => {
     save.href = canvas.toDataURL();
 }
 
+// effects
 
 let filters = document.querySelectorAll('input[type="range"]');
 // console.log(filters)
@@ -117,6 +118,8 @@ filters.forEach(input => {
     }
 
 })
+
+// displayRange
 
 $(document).ready(() => {
     // console.log($('.effectRange:first div'))
